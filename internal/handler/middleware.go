@@ -41,7 +41,8 @@ func (h *Handler) userIdentity(c *gin.Context) {
 	c.Set(userCtx, userId)
 }
 
-// getUserId возвращает id пользователя из ctx
+// переделать нейминг функции getUserId на UserId
+// UserId возвращает id пользователя из ctx
 func getUserId(c *gin.Context) (int, error) {
 	id, ok := c.Get(userCtx)
 	if !ok {

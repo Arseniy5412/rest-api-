@@ -40,7 +40,7 @@ func main() {
 	services := service.NewService(repos)
 	handlers := handler.NewHandler(services)
 
-	serv := new(app.Server)
+	serv := &app.Server{}
 	if err := serv.Run(viper.GetString("port"), handlers.InitRoutes()); err != nil {
 		logrus.Fatalf("error running http server: %s", err)
 	}
